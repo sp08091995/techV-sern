@@ -1,0 +1,46 @@
+{
+  "name": "techv-sern",
+  "version": "1.0.0",
+  "description": "Assignment for TechVariable",
+  "main": "index.js",
+  "scripts": {
+    "test": "env-cmd ./config/test.env jest --watch",
+    "server": "env-cmd ./config/dev.env node src/index.js",
+    "dev": "env-cmd ./config/dev.env nodemon src/index.js",
+    "client": "npm start --prefix ../client",
+    "serve": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/santa1k95/TechV-sern.git"
+  },
+  "author": "Santanu Phukan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/santa1k95/TechV-sern/issues"
+  },
+  "homepage": "https://github.com/santa1k95/TechV-sern#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.1",
+    "jest": "^27.0.6",
+    "method-override": "^3.0.0",
+    "multer": "^1.4.3",
+    "mysql2": "^2.3.0",
+    "sequelize": "^6.6.5",
+    "winston": "^3.3.3",
+    "winston-daily-rotate-file": "^4.5.5"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.1",
+    "dotenv": "^10.0.0",
+    "env-cmd": "^8.0.2",
+    "nodemon": "^2.0.12",
+    "supertest": "^3.4.1"
+  }
+}

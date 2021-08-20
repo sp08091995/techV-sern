@@ -1,0 +1,5 @@
+<h1>Hi <%= user.firstname + ' '+ user.lastname %></h1>
+<form action="/document/new" enctype="multipart/form-data" method="POST">
+    <input type="file" id="docName" name="docName" required value="">
+  <button type="submit">Upload Doc</button>
+</form>

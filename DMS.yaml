@@ -1,0 +1,118 @@
+openapi: 3.0.0
+servers:
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/santanuphukan1/DocumentManagerAPI/1.0.0
+  - description: SwaggerHub API Auto Mocking
+    url: https://app.swaggerhub.com/apis/santanuphukan1/DocumentManagerAPI/1.0.0
+  - description: SwaggerHub API Auto Mocking
+    url: http://localhost:5000/
+info:
+  description: Document Manager API
+  version: "1.0.0"
+  title: Document Manager API
+  contact:
+    email: santanuphukan1@gmail.com
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+tags:
+  - name: Document
+    description: API's for Document Route
+paths:
+  /document/getall:
+    get:
+      tags:
+        - Document
+      summary: Searches for all the documents in the database
+      operationId: getAllDocuments
+      description: |
+        By passing in the appropriate options, you can search for all
+        available documents in the database
+      responses:
+        '200':
+          description: Search results with array of documents
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Document'
+        '400':
+          description: Bad Request
+
+  /document/upload:
+    post:
+      tags:
+        - Document
+      summary: Adds document(s) to the system
+      operationId: addDocument
+      description: Adds document(s) to the system
+      responses:
+        '200':
+          description: Upload Successful
+        '400':
+          description: Bad Request
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                files:
+                  type: array
+                  items:
+                    type: string
+                    format: binary
+  /document/delete/{id}:
+    delete:
+      tags:
+        - Document
+      summary: Deletes a document from the system
+      operationId: deleteDocument
+      description: Deletes a document from the system
+      responses:
+        '200':
+          description: Deleted
+        '400':
+          description: Bad Request
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: Numeric ID of the document to delete
+components:
+  schemas:
+    Document:
+      type: object
+      required:
+      - id
+        - fileName
+        - type
+        - expiresOn
+        - createdOn
+        - updatedOn
+      properties:
+        id:
+          type: string
+          format: int
+          example: 1
+        fileName:
+          type: string
+          example: Document1
+        type:
+          type: string
+          example: application/pdf
+        expiresOn:
+          type: string
+          format: date-time
+          example: '2016-08-29T09:12:33.001Z'
+        createdOn:
+          type: string
+          format: date-time
+          example: '2016-08-29T09:12:33.001Z'
+        updatedOn:
+          type: string
+          format: date-time
+          example: '2016-08-29T09:12:33.001Z'

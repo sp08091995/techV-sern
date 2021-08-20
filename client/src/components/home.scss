@@ -1,0 +1,123 @@
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(238, 234, 234);
+    .topbar {
+        text-align: center;
+        flex-basis: 100%;
+        width: 100%;
+        color: rgb(255, 255, 255);
+        background-color: rgb(60, 69, 70);
+    }
+    .msgDiv {
+        width: 60%;
+        display: flex;
+        justify-content: center;
+        transition: all 1s;
+        margin-top: 10px;
+        .error {
+            width: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid red;
+            color: red;
+            i {
+                margin-right: 4px;
+            }
+        }
+        .success {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60%;
+            border: 1px solid green;
+            color: green;
+            i {
+                margin-right: 4px;
+            }
+        }
+    }
+    .btnwrapper {
+        display: flex;
+        width: 90%;
+        margin: 30px;
+        .form {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: center;
+            flex-basis: 100%;
+            width: 100%;
+            .btn-upload {
+                display: flex;
+                cursor: pointer;
+                align-content: center;
+                justify-content: center;
+                align-items: center;
+                background: rgb(82, 157, 42);
+                border: 1px solid darkgreen;
+                color: rgb(255, 255, 255);
+                border-radius: 10px;
+                display: inline-block;
+                margin: 0 4px;
+                margin-left: 20px;
+                padding: 2px 5px;
+                transition: all 0.5s;
+                &:hover {
+                    background: rgb(82, 157, 42);
+                background: linear-gradient(90deg, rgba(82, 157, 42, 1) 20%, rgba(136, 164, 47, 1) 95%);
+                    color: rgb(60, 69, 70);
+                }
+            }
+            input {
+                width: 380px;
+                border: 1px solid black;
+                padding: 0;
+                margin: 0;
+            }
+        }
+    }
+    .tablewrapper {
+        display: none;
+        width: 100%;
+        justify-content: center;
+        table {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            tr {
+                width: 100%;
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                .tableHeader {
+                    flex-basis: 25%;
+                }
+                .tableData {
+                    flex-basis: 25%;
+                    font-size: 12px;
+                    text-align: center;
+                    a {
+                        cursor: pointer;
+                        text-decoration: none;
+                        color: rgb(114, 114, 235);
+                        font-size: 12px;
+                        &:hover {
+                            color: blue;
+                        }
+                    }
+                }
+            }
+            // .data-row{
+            //     display: flex;
+            // }
+        }&.active{
+            display: flex !important;
+        }
+    }
+}
