@@ -2,7 +2,7 @@
 
     Demo Project for Tech-Variable with tech stack: Node, React and Sql
 
-Bringing up the Server and Client
+**Bringing up the Server and Client**
 
     •	Rename MASTERconfig -> config in server/
     
