@@ -1,4 +1,6 @@
-# techV-sern
+# Document Management System
+
+    Demo Project for Tech-Variable with tech stack: Node, React and Sql
 
 Bringing up the Server and Client
 
